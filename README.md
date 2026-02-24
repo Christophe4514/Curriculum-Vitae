@@ -1,6 +1,3 @@
 # Curriculum-Vitae
-Curriculum-Vitae
 
-## CV
-
-## texte de confidentialité 
+    Christophe Wizamo est Mobile Manager chez Kim Engineering SARL et un ingénieur logiciel passionné, spécialisé dans les solutions mobiles et orientées données. Il est expert en développement iOS et Android, avec une solide expérience dans     l’utilisation de Flutter pour créer des applications mobiles performantes et intuitives. En plus des technologies mobiles, il maîtrise des frameworks de développement web tels que Laravel et Django, et travaille largement avec Python      pour l’analyse de données et les systèmes intelligents. Christophe poursuit actuellement un Master en Intelligence Artificielle à l’Université de Kinshasa, où il se concentre sur l’application des techniques d’IA à des problèmes concrets.    Fort  d’un solide parcours professionnel en ingénierie logicielle et animé par une volonté constante d’innovation, il s’engage à concevoir des solutions modernes et évolutives, et à contribuer à des projets technologiques ambitieux qui       repoussent les limites de la transformation numérique.
