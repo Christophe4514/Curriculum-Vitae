@@ -1,0 +1,323 @@
+/**
+ * Portfolio — overrides modernes (chargé après style.css)
+ */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+:root {
+  --m-bg: #070a0f;
+  --m-bg-raised: #0f1419;
+  --m-surface: rgba(255, 255, 255, 0.035);
+  --m-border: rgba(255, 255, 255, 0.08);
+  --m-text: #cbd5e1;
+  --m-text-muted: #94a3b8;
+  --m-heading: #f1f5f9;
+  --m-accent: #f59e0b;
+  --m-accent-soft: rgba(245, 158, 11, 0.15);
+  --m-cyan: #22d3ee;
+  --m-radius-lg: 1.125rem;
+  --m-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55);
+  --m-font: "Plus Jakarta Sans", "Poppins", system-ui, sans-serif;
+}
+
+body.portfolio-modern {
+  font-family: var(--m-font) !important;
+  background: var(--m-bg) !important;
+  color: var(--m-text) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.portfolio-modern h1,
+body.portfolio-modern h2,
+body.portfolio-modern h3,
+body.portfolio-modern h4,
+body.portfolio-modern h5,
+body.portfolio-modern .h1,
+body.portfolio-modern .h2,
+body.portfolio-modern .h3,
+body.portfolio-modern .h4,
+body.portfolio-modern .h5 {
+  color: var(--m-heading) !important;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+body.portfolio-modern p {
+  color: var(--m-text);
+  line-height: 1.75;
+}
+
+body.portfolio-modern a {
+  color: var(--m-cyan);
+}
+body.portfolio-modern a:hover,
+body.portfolio-modern a:focus {
+  color: var(--m-accent);
+}
+
+/* ——— Navigation ——— */
+body.portfolio-modern .ftco-navbar-light {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+body.portfolio-modern .ftco-navbar-light .navbar-brand {
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+  letter-spacing: -0.03em !important;
+}
+
+body.portfolio-modern .ftco-navbar-light.scrolled {
+  background: rgba(7, 10, 15, 0.82) !important;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--m-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+body.portfolio-modern .ftco-navbar-light .navbar-nav > .nav-item > .nav-link span:before,
+body.portfolio-modern .ftco-navbar-light .navbar-nav > .nav-item .nav-link.active span:before {
+  background: var(--m-cyan) !important;
+}
+
+body.portfolio-modern .ftco-navbar-light .navbar-nav > .nav-item .nav-link.active {
+  color: var(--m-cyan) !important;
+}
+
+/* ——— Hero ——— */
+body.portfolio-modern .owl-carousel.home-slider .slider-item .overlay {
+  background: linear-gradient(
+    115deg,
+    rgba(7, 10, 15, 0.92) 0%,
+    rgba(15, 23, 42, 0.55) 45%,
+    rgba(7, 10, 15, 0.25) 100%
+  ) !important;
+}
+
+body.portfolio-modern .owl-carousel.home-slider .slider-item .slider-text .one-third .overlay {
+  opacity: 0.35 !important;
+}
+
+body.portfolio-modern .owl-carousel.home-slider .slider-item .slider-text h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+}
+
+body.portfolio-modern .owl-carousel.home-slider .slider-item .slider-text h1 span {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #f97316 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+body.portfolio-modern .owl-carousel.home-slider .slider-item .slider-text h2 {
+  font-size: clamp(1rem, 2.5vw, 1.25rem) !important;
+  font-weight: 500 !important;
+  color: var(--m-text-muted) !important;
+  letter-spacing: 0.02em;
+}
+
+body.portfolio-modern .slider-text .subheading {
+  display: inline-block !important;
+  padding: 0.4rem 1rem !important;
+  border-radius: 9999px !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #a5f3fc !important;
+  background: rgba(34, 211, 238, 0.12) !important;
+  border: 1px solid rgba(34, 211, 238, 0.25) !important;
+}
+
+/* ——— Sections ——— */
+body.portfolio-modern .ftco-section {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+body.portfolio-modern #publications-section,
+body.portfolio-modern #experience-section,
+body.portfolio-modern #competences-section {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, transparent 100%);
+}
+
+body.portfolio-modern #education-section,
+body.portfolio-modern #achievements-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.2) 50%, transparent 100%);
+}
+
+/* Titres de section */
+body.portfolio-modern .heading-section h1.big {
+  color: rgba(241, 245, 249, 0.06) !important;
+  font-weight: 800 !important;
+}
+
+body.portfolio-modern .heading-section h2 {
+  font-size: clamp(1.65rem, 4vw, 2.35rem) !important;
+  font-weight: 700 !important;
+}
+
+body.portfolio-modern .heading-section.text-center {
+  margin-bottom: 0.5rem !important;
+}
+
+/* ——— À propos ——— */
+body.portfolio-modern .ftco-about .img-about .img {
+  border-radius: var(--m-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--m-shadow);
+  border: 1px solid var(--m-border);
+}
+
+body.portfolio-modern .ftco-about ul.about-info li span:first-child {
+  color: var(--m-text-muted) !important;
+  font-weight: 500 !important;
+}
+
+body.portfolio-modern .ftco-about ul.about-info li span a {
+  word-break: break-word;
+}
+
+/* ——— Cartes CV / listes ——— */
+body.portfolio-modern .resume-wrap {
+  background: var(--m-bg-raised) !important;
+  border: 1px solid var(--m-border) !important;
+  border-radius: var(--m-radius-lg) !important;
+  border-left: 3px solid var(--m-accent) !important;
+  box-shadow: var(--m-shadow) !important;
+  padding: 1.65rem 1.75rem !important;
+  margin-bottom: 1.15rem !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+body.portfolio-modern .resume-wrap:hover {
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.65);
+}
+
+body.portfolio-modern .resume-wrap .date {
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: var(--m-accent) !important;
+}
+
+body.portfolio-modern .resume-wrap h2 {
+  font-size: 1.2rem !important;
+  margin-top: 0.35rem !important;
+}
+
+body.portfolio-modern .resume-wrap .position {
+  color: var(--m-text-muted) !important;
+  letter-spacing: 0.12em !important;
+}
+
+body.portfolio-modern .resume-wrap .text-muted {
+  color: var(--m-text-muted) !important;
+}
+
+body.portfolio-modern .resume-wrap ul li {
+  margin-bottom: 0.35rem;
+}
+
+/* ——— Compteur ——— */
+body.portfolio-modern .ftco-counter .block-18 {
+  background: var(--m-bg-raised) !important;
+  border: 1px solid var(--m-border);
+  border-radius: var(--m-radius-lg);
+  box-shadow: var(--m-shadow);
+}
+
+body.portfolio-modern .ftco-counter .text strong.number {
+  color: var(--m-cyan) !important;
+}
+
+/* ——— Contact ——— */
+body.portfolio-modern .contact-section .box {
+  background: var(--m-surface) !important;
+  border: 1px solid var(--m-border) !important;
+  border-radius: var(--m-radius-lg) !important;
+  padding: 2rem 1.5rem !important;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+body.portfolio-modern .contact-section .box:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34, 211, 238, 0.25);
+}
+
+body.portfolio-modern .contact-section .box .icon {
+  background: rgba(34, 211, 238, 0.1) !important;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+
+body.portfolio-modern .contact-section .box .icon span {
+  color: var(--m-cyan) !important;
+}
+
+body.portfolio-modern .contact-section .box h3 {
+  color: var(--m-heading) !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+body.portfolio-modern .contact-section .contact-info p,
+body.portfolio-modern .contact-section .contact-info p a {
+  color: var(--m-text) !important;
+}
+
+body.portfolio-modern .contact-section .contact-info p a:hover {
+  color: var(--m-accent) !important;
+}
+
+/* ——— Footer ——— */
+body.portfolio-modern .ftco-footer {
+  background: linear-gradient(180deg, var(--m-bg) 0%, #030508 100%) !important;
+  border-top: 1px solid var(--m-border);
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+body.portfolio-modern .ftco-footer-social li a {
+  background: var(--m-surface) !important;
+  border: 1px solid var(--m-border);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+body.portfolio-modern .ftco-footer-social li a:hover {
+  background: rgba(34, 211, 238, 0.12) !important;
+  border-color: rgba(34, 211, 238, 0.35);
+  transform: translateY(-3px);
+}
+
+body.portfolio-modern .ftco-footer-social li a span {
+  color: var(--m-cyan) !important;
+}
+
+body.portfolio-modern .ftco-footer-social li a:hover span {
+  color: #fff !important;
+}
+
+/* ——— Loader ——— */
+body.portfolio-modern #ftco-loader .path {
+  stroke: var(--m-cyan) !important;
+}
+
+/* ——— Responsive ——— */
+@media (max-width: 767.98px) {
+  body.portfolio-modern .ftco-section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+}
