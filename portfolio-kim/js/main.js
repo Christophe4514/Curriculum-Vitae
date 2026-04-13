@@ -7,21 +7,35 @@
 
 	"use strict";
 
-	$(window).stellar({
-    responsive: true,
-    parallaxBackgrounds: true,
-    parallaxElements: true,
-    horizontalScrolling: false,
-    hideDistantElements: false,
-    scrollProperty: 'scroll'
-  });
+	var isMobileLayout = function () {
+		return window.matchMedia('(max-width: 991.98px)').matches;
+	};
+
+	if (!isMobileLayout()) {
+		$(window).stellar({
+			responsive: true,
+			parallaxBackgrounds: true,
+			parallaxElements: true,
+			horizontalScrolling: false,
+			hideDistantElements: false,
+			scrollProperty: 'scroll'
+		});
+	}
 
 
 	var fullHeight = function() {
 
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
+		var applyHeights = function () {
+			if (isMobileLayout()) {
+				$('.js-fullheight').css({ height: '', minHeight: '' });
+			} else {
+				var h = $(window).height();
+				$('.js-fullheight').css('height', h);
+			}
+		};
+		applyHeights();
+		$(window).on('resize orientationchange', function () {
+			applyHeights();
 		});
 
 	};
@@ -37,8 +51,10 @@
 	};
 	loader();
 
-	// Scrollax
-   $.Scrollax();
+	// Scrollax (désactivé sur mobile : conflits avec le défilement tactile)
+	if (!isMobileLayout()) {
+		$.Scrollax();
+	}
 
 
 
@@ -70,11 +86,18 @@
 	    event.preventDefault();
 
 	    var href = $.attr(this, 'href');
+	    var $target = $(href);
+	    if (!$target.length) {
+	    	return;
+	    }
+	    var offset = isMobileLayout() ? 56 : 80;
 
 	    $('html, body').animate({
-	        scrollTop: $($.attr(this, 'href')).offset().top - 80
-	    }, 500, function() {
-	    	// window.location.hash = href;
+	        scrollTop: $target.offset().top - offset
+	    }, 450, function() {
+	    	if (isMobileLayout() && typeof $('#ftco-nav').collapse === 'function') {
+	    		$('#ftco-nav').collapse('hide');
+	    	}
 	    });
 		});
 
@@ -92,6 +115,9 @@
 	    animateIn: 'fadeIn',
 	    nav:false,
 	    autoplayHoverPause: false,
+	    touchDrag: false,
+	    mouseDrag: false,
+	    pullDrag: false,
 	    items: 1,
 	    navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
 	    responsive:{

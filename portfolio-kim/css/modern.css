@@ -3,6 +3,7 @@
  */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -32,6 +33,19 @@ body.portfolio-modern {
   color: var(--m-text) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Conteneur navbar du thème (largeur fixe 1110px) : provoque un scroll horizontal sur mobile */
+body.portfolio-modern .ftco-navbar-light .container {
+  width: 100% !important;
+  max-width: 1140px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 body.portfolio-modern h1,
@@ -315,9 +329,111 @@ body.portfolio-modern #ftco-loader .path {
 }
 
 /* ——— Responsive ——— */
+@media (max-width: 991.98px) {
+  /* Hero : hauteur fluide (évite 750px + JS height sur petite hauteur d’écran) */
+  body.portfolio-modern .owl-carousel.home-slider,
+  body.portfolio-modern .owl-carousel.home-slider .slider-item,
+  body.portfolio-modern .owl-carousel.home-slider .slider-item .slider-text {
+    height: auto !important;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  body.portfolio-modern .owl-carousel.home-slider .slider-item .slider-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body.portfolio-modern .owl-carousel.home-slider .slider-item .slider-text .row {
+    flex: 1;
+    min-height: inherit;
+    flex-direction: column;
+  }
+
+  body.portfolio-modern .owl-carousel.home-slider .slider-item .slider-text .one-third.img {
+    order: -1;
+    width: 100% !important;
+    min-height: 42vh;
+    min-height: 42svh;
+    height: auto !important;
+    background-position: center top !important;
+  }
+
+  body.portfolio-modern .owl-carousel.home-slider .slider-item .slider-text .one-forth {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    flex: 1;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1.5rem 1rem 2.5rem !important;
+    z-index: 2;
+  }
+
+  body.portfolio-modern .owl-carousel.home-slider .slider-item .slider-text .one-forth .text {
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center;
+  }
+
+  body.portfolio-modern .owl-carousel.home-slider .slider-item .slider-text h1 {
+    font-size: clamp(1.65rem, 7vw, 2.5rem) !important;
+  }
+
+  body.portfolio-modern .owl-carousel.home-slider .slider-item .slider-text h2 {
+    font-size: clamp(0.95rem, 3.8vw, 1.15rem) !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Parallax désactivé côté JS : annule toute translation résiduelle */
+  body.portfolio-modern [data-scrollax],
+  body.portfolio-modern [data-scrollax-parent] {
+    transform: none !important;
+  }
+
+  body.portfolio-modern .navbar-brand {
+    font-size: 0.95rem !important;
+    white-space: normal;
+    line-height: 1.25;
+    max-width: calc(100vw - 120px);
+  }
+
+  body.portfolio-modern .ftco-about .img-about .img {
+    min-height: 280px;
+  }
+
+  body.portfolio-modern .ftco-about ul.about-info li {
+    flex-wrap: wrap;
+  }
+
+  body.portfolio-modern .ftco-about ul.about-info li span:first-child {
+    width: 100% !important;
+    max-width: 140px;
+  }
+
+  body.portfolio-modern .ftco-about ul.about-info li span {
+    width: auto !important;
+    flex: 1;
+    min-width: 0;
+  }
+}
+
 @media (max-width: 767.98px) {
   body.portfolio-modern .ftco-section {
     padding-top: 3.5rem !important;
     padding-bottom: 3.5rem !important;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
   }
 }
